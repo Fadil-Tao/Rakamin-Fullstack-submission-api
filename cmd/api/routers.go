@@ -17,7 +17,6 @@ func Router() *gin.Engine{
 	
 	// User routers
 	users := v1.Group("/users")
-	users.GET("/alluser",CheckAuth, controllers.GetAllUser )
 	users.GET("/details/:userid", CheckAuth,controllers.GetUserDetails )
 	users.POST("/register", controllers.HandleRegister)
 	users.POST("/login" , controllers.HandleLogin)
@@ -26,7 +25,7 @@ func Router() *gin.Engine{
 	users.POST("/logout",controllers.ClearCookie)
 	// Photos routers
 	photos := v1.Group("/photos")
-	photos.GET("/allphotos")
+	photos.GET("/getphoto/:photoid",CheckAuth, controllers.GetPhoto)
 	photos.POST("/post",CheckAuth, controllers.AddPhoto)
 	photos.PUT("/update/:photoid",CheckAuth, controllers.UpdatePhoto)
 	photos.DELETE("/delete/:photoid" , CheckAuth, controllers.DeletePhoto)
