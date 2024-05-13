@@ -128,3 +128,31 @@ func UpdatePhoto(ctx *gin.Context) {
 		"photoUrl": photo.PhotoUrl,
 	})
 }
+
+func GetPhoto(ctx *gin.Context){
+	Param := ctx.Param("photoid")
+
+	photoId, err := strconv.ParseUint(Param, 10, 64)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Invalid Photo ID"})
+		return
+	}
+
+	var photo models.PhotosResponse
+	if err := models.DB.First(&photo, photoId).Error; err != nil {
+		ctx.JSON(http.StatusNotFound, gin.H{"error": "Photo not found"})
+		return
+	}
+
+	if err := models.DB.First(&photo).Error; err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retrieve photos"})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"ID":       photo.ID,
+		"Title": photo.Title,
+		"Caption":    photo.Caption,
+		"Photourl":   photo.PhotoUrl,
+	})
+}

@@ -97,10 +97,6 @@ func HandleRegister(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"massage": "user successfully created", "user": user.Email})
 }
 
-func GetAllUser(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{"massage": "im logged in"})
-}
-
 func GetUserDetails(ctx *gin.Context) {
 	Param := ctx.Param("userid")
 
