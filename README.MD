@@ -37,3 +37,24 @@ DBPORT=
 JWT_SECRET= 
 ```
 
+## API ENDPOINT
+- Register/signup 
+POST ```/v1/pbiapi/users/register```
+- Login
+POST ```/v1/pbiapi/users/login```
+- Get User Info
+GET ```/v1/pbiapi/users/details/:userid```
+- Update User Info
+POST  ```/v1/pbiapi/users/update/:userid```
+- Delete User
+DELETE  ```/v1/pbiapi/users/delete/:userid```
+- Logout / clear cookie
+POST  ```/v1/pbiapi/users/logout```
+-  Get Photo by id
+GET ```/v1/pbiapi/photos/getPhoto/:photoid```
+- Add Photo
+POST ```/v1/pbiapi/photos/post```
+-   Update photo
+PUT ```/v1/pbiapi/photos/update/:photoid```
+-   Delete Photo
+DELETE ```/v1/pbiapi/photos/delete/:photoid```
