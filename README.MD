@@ -1,4 +1,4 @@
-# FINAL TAS SUBMISSION RAKAMIN PBI 
+# FINAL TASK SUBMISSION RAKAMIN PBI 
 
 Membuat REST A.P.I menggunakan Bahasa Pemrograman Go. 
 
@@ -40,21 +40,77 @@ JWT_SECRET=
 ## API ENDPOINT
 - Register/signup 
 POST ```/v1/pbiapi/users/register```
+JSON yang akan dikirim
+```
+{
+  "email":"foo@gmail.com",
+  "username":"foo",
+  "password":"bar123"
+}
+```
+
 - Login
 POST ```/v1/pbiapi/users/login```
+JSON yang akan dikirim
+```
+{
+  "email": "foo@gmail.com",
+  "password":"bar123"
+}
+```
+
 - Get User Info
 GET ```/v1/pbiapi/users/details/:userid```
+Contog Penggunaan
+```http://localhost:8080/v1/pbiapi/users/details/2```
+
 - Update User Info
-POST  ```/v1/pbiapi/users/update/:userid```
+PUT  ```/v1/pbiapi/users/update/:userid```
+JSON yang akan dikirim :
+```
+{
+  "email":"foo@gmail.com",
+  "username":"foo",
+  "password":"bar123"
+}
+```
 - Delete User
 DELETE  ```/v1/pbiapi/users/delete/:userid```
+Contog Penggunaan : 
+``` http://localhost:8080/v1/pbiapi/photos/delete/3```
+
 - Logout / clear cookie
 POST  ```/v1/pbiapi/users/logout```
+Contog Penggunaan : 
+```http://localhost:8080/v1/pbiapi/users/logout```
+
 -  Get Photo by id
 GET ```/v1/pbiapi/photos/getPhoto/:photoid```
+Contoh Penggunaan:
+```http://localhost:8080/v1/pbiapi/photos/getphoto/2```
+
 - Add Photo
 POST ```/v1/pbiapi/photos/post```
+JSON Yang akan dikirim :
+```
+{
+  "title" : "Foo",
+  "caption" : "Bar",
+  "url": "https://placebear.com/500/300"
+}
+```
+
+
 -   Update photo
 PUT ```/v1/pbiapi/photos/update/:photoid```
+JSON Body yang akan dikirim :
+```
+{
+  "title":"foo",
+  "caption" : "bar",
+  "url":"https://placebear.com/200/300"
+}
+```
+
 -   Delete Photo
 DELETE ```/v1/pbiapi/photos/delete/:photoid```
