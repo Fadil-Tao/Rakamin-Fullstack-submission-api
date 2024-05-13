@@ -62,7 +62,9 @@ JSON yang akan dikirim
 - Get User Info
 GET ```/v1/pbiapi/users/details/:userid```
 Contog Penggunaan
-```http://localhost:8080/v1/pbiapi/users/details/2```
+```
+http://localhost:8080/v1/pbiapi/users/details/2
+```
 
 - Update User Info
 PUT  ```/v1/pbiapi/users/update/:userid```
@@ -77,17 +79,23 @@ JSON yang akan dikirim :
 - Delete User
 DELETE  ```/v1/pbiapi/users/delete/:userid```
 Contog Penggunaan : 
-``` http://localhost:8080/v1/pbiapi/photos/delete/3```
+```
+http://localhost:8080/v1/pbiapi/photos/delete/3
+```
 
 - Logout / clear cookie
 POST  ```/v1/pbiapi/users/logout```
 Contog Penggunaan : 
-```http://localhost:8080/v1/pbiapi/users/logout```
+```
+http://localhost:8080/v1/pbiapi/users/logout
+```
 
 -  Get Photo by id
 GET ```/v1/pbiapi/photos/getPhoto/:photoid```
 Contoh Penggunaan:
-```http://localhost:8080/v1/pbiapi/photos/getphoto/2```
+```
+http://localhost:8080/v1/pbiapi/photos/getphoto/2
+```
 
 - Add Photo
 POST ```/v1/pbiapi/photos/post```
@@ -114,3 +122,7 @@ JSON Body yang akan dikirim :
 
 -   Delete Photo
 DELETE ```/v1/pbiapi/photos/delete/:photoid```
+Contoh Penggunaan :
+```
+http://localhost:8080/v1/pbiapi/photos/update/2
+```
